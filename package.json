@@ -1,0 +1,20 @@
+{
+  "name": "@scriptaddicts/eslint-config",
+  "version": "1.0.0",
+  "main": "./index.js",
+  "type": "module",
+  "dependencies": {
+    "@eslint-react/eslint-plugin": "2.2.4",
+    "@eslint/js": "9.38.0",
+    "eslint": "9.38.0",
+    "eslint-import-resolver-typescript": "4.4.4",
+    "eslint-plugin-import-x": "4.16.1",
+    "eslint-plugin-react-hooks": "7.0.1",
+    "eslint-plugin-react-refresh": "0.4.24",
+    "eslint-plugin-sonarjs": "3.0.5",
+    "eslint-plugin-storybook": "10.0.1",
+    "eslint-plugin-unicorn": "62.0.0",
+    "globals": "16.4.0",
+    "typescript-eslint": "8.46.2"
+  }
+}
