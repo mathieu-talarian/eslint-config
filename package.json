@@ -1,20 +1,25 @@
 {
-  "name": "@math/eslint-config",
-  "version": "1.0.0",
+  "name": "@mathieu-talarian/eslint-config",
+  "version": "1.0.2",
   "main": "./index.js",
   "type": "module",
   "dependencies": {
-    "@eslint-react/eslint-plugin": "2.2.4",
-    "@eslint/js": "9.38.0",
-    "eslint": "9.38.0",
+    "@eslint-react/eslint-plugin": "2.3.5",
+    "@eslint/js": "9.39.1",
+    "@stylexjs/eslint-plugin": "0.16.3",
+    "eslint": "9.39.1",
     "eslint-import-resolver-typescript": "4.4.4",
     "eslint-plugin-import-x": "4.16.1",
     "eslint-plugin-react-hooks": "7.0.1",
     "eslint-plugin-react-refresh": "0.4.24",
+    "eslint-plugin-solid": "0.14.5",
     "eslint-plugin-sonarjs": "3.0.5",
-    "eslint-plugin-storybook": "10.0.1",
+    "eslint-plugin-storybook": "10.0.7",
     "eslint-plugin-unicorn": "62.0.0",
-    "globals": "16.4.0",
-    "typescript-eslint": "8.46.2"
+    "globals": "16.5.0",
+    "typescript-eslint": "8.46.4"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }

@@ -1,10 +1,7 @@
 import js from "@eslint/js";
 import globals from "globals";
-import reactHooks from "eslint-plugin-react-hooks";
-import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import { defineConfig, globalIgnores } from "eslint/config";
-import eslintReact from "@eslint-react/eslint-plugin";
 import importX from "eslint-plugin-import-x";
 import sonar from "eslint-plugin-sonarjs";
 import unicorn from "eslint-plugin-unicorn";
@@ -18,9 +15,6 @@ export const base = defineConfig([
       js.configs.recommended,
       tseslint.configs.recommended,
       tseslint.configs.stylistic,
-      reactHooks.configs.flat.recommended,
-      reactRefresh.configs.vite,
-      eslintReact.configs["recommended-typescript"],
       unicorn.configs.recommended,
       {
         rules: {
@@ -72,10 +66,10 @@ export const base = defineConfig([
             "error",
             {
               "newlines-between": "always",
-              "alphabetize": {
+              alphabetize: {
                 order: "asc",
               },
-              "groups": [
+              groups: [
                 "type",
                 "builtin",
                 "external",
