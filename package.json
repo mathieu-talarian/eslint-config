@@ -17,9 +17,10 @@
     "eslint-plugin-storybook": "10.0.8",
     "eslint-plugin-unicorn": "62.0.0",
     "globals": "16.5.0",
-    "typescript-eslint": "8.47.0"
+    "typescript-eslint": "8.48.0"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
-  }
+  },
+  "packageManager": "yarn@4.12.0"
 }

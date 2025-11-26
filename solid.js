@@ -1,11 +1,11 @@
 import { defineConfig } from "eslint/config";
-import solid from "eslint-plugin-solid";
+import * as solidConfig from "eslint-plugin-solid";
 import tsParser from "@typescript-eslint/parser";
 
 export const solid = defineConfig([
   {
     files: ["**/*.{ts,tsx}"],
-    ...solid,
+    ...solidConfig,
     languageOptions: {
       parser: tsParser,
       parserOptions: {
