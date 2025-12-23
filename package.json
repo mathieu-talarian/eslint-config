@@ -1,26 +1,49 @@
 {
   "name": "@mathieu-talarian/eslint-config",
-  "version": "1.0.4",
-  "main": "./index.js",
+  "version": "1.0.11",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublish": "yarn build",
+    "build": "swc src -d dist --strip-leading-paths && tsc",
+    "clean": "rm -rf dist",
+    "release": "npm version patch && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:major": "npm version major && npm publish"
+  },
   "dependencies": {
-    "@eslint-react/eslint-plugin": "2.3.7",
-    "@eslint/js": "9.39.1",
-    "@stylexjs/eslint-plugin": "0.17.0",
-    "eslint": "9.39.1",
+    "@eslint-react/eslint-plugin": "2.3.13",
+    "@eslint/js": "9.39.2",
+    "@next/eslint-plugin-next": "^16.1.1",
+    "@stylexjs/eslint-plugin": "0.17.4",
+    "eslint": "9.39.2",
     "eslint-import-resolver-typescript": "4.4.4",
     "eslint-plugin-import-x": "4.16.1",
     "eslint-plugin-react-hooks": "7.0.1",
-    "eslint-plugin-react-refresh": "0.4.24",
+    "eslint-plugin-react-refresh": "0.4.26",
     "eslint-plugin-solid": "0.14.5",
     "eslint-plugin-sonarjs": "3.0.5",
-    "eslint-plugin-storybook": "10.0.8",
+    "eslint-plugin-storybook": "10.1.10",
+    "eslint-plugin-turbo": "^2.7.1",
     "eslint-plugin-unicorn": "62.0.0",
     "globals": "16.5.0",
-    "typescript-eslint": "8.48.0"
+    "storybook": "^10.1.10",
+    "typescript-eslint": "8.50.1"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "packageManager": "yarn@4.12.0"
+  "packageManager": "yarn@4.12.0",
+  "devDependencies": {
+    "@swc/cli": "^0.7.9",
+    "@swc/core": "^1.15.7",
+    "@tsconfig/node-lts": "^24.0.0",
+    "@types/node": "^25.0.3",
+    "@typescript/native-preview": "^7.0.0-dev.20251223.1",
+    "prettier": "^3.7.4"
+  }
 }

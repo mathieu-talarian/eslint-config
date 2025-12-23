@@ -1,0 +1,1 @@
+import{defineConfig as e}from"eslint/config";import n from"@next/eslint-plugin-next";export const next=e([{files:["**/*.{ts,tsx}"],plugins:{"@next/next":n},rules:{...n.configs.recommended.rules,...n.configs["core-web-vitals"].rules}}]);

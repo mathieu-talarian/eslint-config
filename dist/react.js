@@ -1,0 +1,1 @@
+import{defineConfig as t}from"eslint/config";import e from"@eslint-react/eslint-plugin";import i from"eslint-plugin-react-refresh";import o from"eslint-plugin-react-hooks";import r from"eslint-plugin-import-x";export const react=t([{files:["**/*.{ts,tsx}"],extends:[o.configs.flat.recommended,i.configs.vite,e.configs["recommended-typescript"],r.flatConfigs.react]}]);

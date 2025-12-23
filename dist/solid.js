@@ -1,0 +1,1 @@
+import{defineConfig as s}from"eslint/config";import*as t from"eslint-plugin-solid";import i from"@typescript-eslint/parser";export const solid=s([{files:["**/*.{ts,tsx}"],extends:[t.default.configs["flat/typescript"],{languageOptions:{parser:i,parserOptions:{project:"tsconfig.json"}}}]}]);

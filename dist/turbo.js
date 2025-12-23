@@ -1,0 +1,1 @@
+import o from"eslint-plugin-turbo";import{defineConfig as t}from"eslint/config";export const turbo=t([o.configs["flat/recommended"]]);

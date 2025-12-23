@@ -1,7 +1,7 @@
-import { base } from "./base.js";
+import type { Linter } from "eslint";
+
 import * as storybookConfig from "eslint-plugin-storybook";
 
 export const storybook = [
-  ...base,
   ...storybookConfig.configs["flat/recommended"],
-];
+] as Linter.Config[];

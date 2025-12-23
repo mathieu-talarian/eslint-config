@@ -1,0 +1,34 @@
+# Source files
+src/
+
+# Config files
+.swcrc
+tsconfig.json
+.yarnrc.yml
+.prettierrc
+.eslintrc*
+eslint.config.*
+
+# IDE
+.idea/
+.vscode/
+*.sublime-*
+
+# Git
+.git/
+.gitignore
+
+# Claude
+.claude/
+
+# Yarn
+.yarn/
+yarn.lock
+
+# Node
+node_modules/
+
+# Misc
+*.log
+*.tgz
+.DS_Store

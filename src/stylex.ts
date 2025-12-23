@@ -1,9 +1,11 @@
 import { defineConfig } from "eslint/config";
+import stylexPlufin from "@stylexjs/eslint-plugin";
 
 export const stylex = defineConfig([
   {
     plugins: {
-      "@stylexjs": require("@stylexjs/eslint-plugin"),
+      // @ts-ignore
+      "@stylexjs": stylexPlufin,
     },
     rules: {
       "@stylexjs/valid-styles": "error",

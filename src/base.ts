@@ -1,7 +1,7 @@
 import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";
-import { defineConfig, globalIgnores } from "eslint/config";
+import { Config, defineConfig, globalIgnores } from "eslint/config";
 import importX from "eslint-plugin-import-x";
 import sonar from "eslint-plugin-sonarjs";
 import unicorn from "eslint-plugin-unicorn";
@@ -11,19 +11,15 @@ export const base = defineConfig([
   globalIgnores(["dist", ".config/*"]),
   {
     files: ["**/*.{ts,tsx}"],
+    // @ts-expect-error types
     extends: [
       js.configs.recommended,
       tseslint.configs.recommended,
       tseslint.configs.stylistic,
       unicorn.configs.recommended,
-      {
-        rules: {
-          "unicorn/prefer-global-this": 0,
-        },
-      },
       sonar.configs.recommended,
-      importX.flatConfigs.recommended,
-      importX.flatConfigs.typescript,
+      importX.flatConfigs.recommended as unknown as Config,
+      importX.flatConfigs.typescript as unknown as Config,
       {
         settings: {
           "import-x/resolver-next": [
@@ -36,7 +32,6 @@ export const base = defineConfig([
       },
       {
         rules: {
-          "no-mixed-spaces-and-tabs": 0,
           "sort-imports": [
             "error",
             {
@@ -118,11 +113,10 @@ export const base = defineConfig([
           "unicorn/prevent-abbreviations": "off",
         },
       },
-    ],
+    ].filter(Boolean),
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: "./tsconfig.json",
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
       },

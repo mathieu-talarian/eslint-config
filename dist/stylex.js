@@ -1,0 +1,1 @@
+import{defineConfig as s}from"eslint/config";import t from"@stylexjs/eslint-plugin";export const stylex=s([{plugins:{"@stylexjs":t},rules:{"@stylexjs/valid-styles":"error","@stylexjs/sort-keys":"warn"}}]);
