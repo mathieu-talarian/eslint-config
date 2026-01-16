@@ -1,6 +1,4 @@
 import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
 import { Config, defineConfig, globalIgnores } from "eslint/config";
 import importX from "eslint-plugin-import-x";
 import sonar from "eslint-plugin-sonarjs";
@@ -14,8 +12,6 @@ export const base = defineConfig([
     // @ts-expect-error types
     extends: [
       js.configs.recommended,
-      tseslint.configs.recommended,
-      tseslint.configs.stylistic,
       unicorn.configs.recommended,
       sonar.configs.recommended,
       importX.flatConfigs.recommended as unknown as Config,
@@ -114,14 +110,5 @@ export const base = defineConfig([
         },
       },
     ].filter(Boolean),
-    languageOptions: {
-      parser: tseslint.parser,
-      parserOptions: {
-        projectService: true,
-        tsconfigRootDir: import.meta.dirname,
-      },
-      ecmaVersion: 2020,
-      globals: globals.browser,
-    },
   },
 ]);
