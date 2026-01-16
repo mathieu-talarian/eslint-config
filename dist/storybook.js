@@ -1,1 +1,0 @@
-import*as o from"eslint-plugin-storybook";export const storybook=[...o.configs["flat/recommended"]];
