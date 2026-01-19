@@ -93,20 +93,8 @@ export const base = defineConfig([
               },
             },
           ],
-          "no-unused-vars": [
-            "error",
-            {
-              varsIgnorePattern: "^_",
-              argsIgnorePattern: "^_",
-            },
-          ],
-          "sonarjs/no-unused-vars": [
-            "error",
-            {
-              varsIgnorePattern: "^_",
-              argsIgnorePattern: "^_",
-            },
-          ],
+          "no-unused-vars": "off",
+          "sonarjs/no-unused-vars": "off",
           "@typescript-eslint/no-unused-vars": [
             "error",
             {
