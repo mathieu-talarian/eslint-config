@@ -109,6 +109,7 @@ export const base = defineConfig([
           "unicorn/no-null": "off",
           "unicorn/prefer-top-level-await": "off",
           "unicorn/prevent-abbreviations": "off",
+          "max-lines": ["error", 250],
         },
       },
     ].filter(Boolean),
