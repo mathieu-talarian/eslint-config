@@ -6,3 +6,4 @@ export * from "./storybook.js";
 export * from "./next.js";
 export * from "./turbo.js";
 export * from "./ts.js";
+export * from "./noBarrelFiles.js";
