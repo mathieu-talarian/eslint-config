@@ -226,9 +226,14 @@ export const enterprise = defineConfig([
           format: ["camelCase", "UPPER_CASE"],
           leadingUnderscore: "allow",
           trailingUnderscore: "allow",
+        },
+        // Effect TS: ignore naming convention for variables ending with "Live" (Layer implementations)
+        {
+          selector: "variable",
+          format: null,
           filter: {
             match: true,
-            regex: /^.Live$/,
+            regex: "Live$",
           },
         },
         // Functions: camelCase or PascalCase (for React components)
