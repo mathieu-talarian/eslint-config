@@ -226,6 +226,10 @@ export const enterprise = defineConfig([
           format: ["camelCase", "UPPER_CASE"],
           leadingUnderscore: "allow",
           trailingUnderscore: "allow",
+          filter: {
+            match: true,
+            regex: /^.Live$/,
+          },
         },
         // Functions: camelCase or PascalCase (for React components)
         {
@@ -233,6 +237,10 @@ export const enterprise = defineConfig([
           format: ["camelCase", "PascalCase"],
         },
         // Types, interfaces, classes, enums: PascalCase
+        {
+          selector: ["typeLike", "class"],
+          format: ["PascalCase"],
+        },
         {
           selector: ["typeLike", "interface", "typeAlias", "typeParameter"],
           format: ["PascalCase"],
