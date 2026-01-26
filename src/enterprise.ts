@@ -233,7 +233,7 @@ export const enterprise = defineConfig([
           format: null,
           filter: {
             match: true,
-            regex: "Live$",
+            regex: "(Live|Test)$",
           },
         },
         // Functions: camelCase or PascalCase (for React components)
