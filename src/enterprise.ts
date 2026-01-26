@@ -227,13 +227,13 @@ export const enterprise = defineConfig([
           leadingUnderscore: "allow",
           trailingUnderscore: "allow",
         },
-        // Effect TS: ignore naming convention for variables ending with "Live" (Layer implementations)
+        // Effect TS: Layer implementations use PascalCase with Live/Test suffix (e.g., ConfigLive, LoggerLive)
         {
           selector: "variable",
-          format: null,
+          format: ["PascalCase"],
           filter: {
             match: true,
-            regex: "(Live|Test)$",
+            regex: "(Live|Test|Layer)$",
           },
         },
         // Functions: camelCase or PascalCase (for React components)
