@@ -223,16 +223,24 @@ export const enterprise = defineConfig([
         // Variables: camelCase or UPPER_CASE (for constants)
         {
           selector: "variable",
-          format: ["PascalCase", "camelCase", "UPPER_CASE"],
+          format: ["camelCase", "UPPER_CASE"],
           leadingUnderscore: "allow",
           trailingUnderscore: "allow",
+        },
+        // Effect TS: Layer implementations use PascalCase with Live/Test suffix (e.g., ConfigLive, LoggerLive)
+        {
+          selector: "variable",
+          format: ["PascalCase"],
+          filter: {
+            match: true,
+            regex: "(Live|Test|Layer)$",
+          },
         },
         // Functions: camelCase or PascalCase (for React components)
         {
           selector: "function",
           format: ["camelCase", "PascalCase"],
         },
-        // Types, interfaces, classes, enums: PascalCase
         {
           selector: ["typeLike", "interface", "typeAlias", "typeParameter"],
           format: ["PascalCase"],
