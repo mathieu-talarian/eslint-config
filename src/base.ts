@@ -72,36 +72,9 @@ export const base = defineConfig([
             },
           ],
           "arrow-body-style": ["error", "as-needed"],
-          "@typescript-eslint/no-explicit-any": "off",
-          "@typescript-eslint/no-var-requires": "off",
           "unicorn/prefer-module": "off",
-          "@typescript-eslint/consistent-type-imports": [
-            "error",
-            {
-              prefer: "type-imports",
-            },
-          ],
-          "@typescript-eslint/naming-convention": [
-            "error",
-            {
-              selector: ["interface", "typeAlias", "typeParameter"],
-              format: ["PascalCase"],
-              suffix: ["T"],
-              filter: {
-                match: false,
-                regex: "^(.|ID)$",
-              },
-            },
-          ],
           "no-unused-vars": "off",
           "sonarjs/no-unused-vars": "off",
-          "@typescript-eslint/no-unused-vars": [
-            "error",
-            {
-              varsIgnorePattern: "^_",
-              argsIgnorePattern: "^_",
-            },
-          ],
           "unicorn/filename-case": "off",
           "unicorn/no-abusive-eslint-disable": "off",
           "unicorn/no-useless-undefined": "off",
