@@ -220,6 +220,10 @@ export const enterprise = defineConfig([
           leadingUnderscore: "allow",
           trailingUnderscore: "allow",
         },
+        {
+          selector: "class",
+          format: ["PascalCase"],
+        },
         // Variables: camelCase or UPPER_CASE (for constants)
         {
           selector: "variable",
