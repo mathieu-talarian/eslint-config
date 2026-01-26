@@ -233,7 +233,7 @@ export const enterprise = defineConfig([
           format: ["camelCase", "PascalCase"],
         },
         {
-          selector: ["typeLike", "interface", "typeAlias", "typeParameter"],
+          selector: ["interface", "typeAlias", "typeParameter"],
           format: ["PascalCase"],
           suffix: ["T"],
           filter: {
