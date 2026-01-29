@@ -23,6 +23,34 @@ const typeCheckedLanguageOptions = {
   },
 };
 
+export const rules = {
+  "@typescript-eslint/consistent-type-imports": [
+    "error",
+    {
+      prefer: "type-imports",
+    },
+  ],
+  "@typescript-eslint/naming-convention": [
+    "error",
+    {
+      selector: ["interface", "typeAlias", "typeParameter"],
+      format: ["PascalCase"],
+      suffix: ["T"],
+      filter: {
+        match: false,
+        regex: "^(.|ID)$",
+      },
+    },
+  ],
+  "@typescript-eslint/no-unused-vars": [
+    "error",
+    {
+      varsIgnorePattern: "^_",
+      argsIgnorePattern: "^_",
+    },
+  ],
+};
+
 /**
  * Recommended TypeScript config (no type checking required).
  * Good starting point for most projects.
