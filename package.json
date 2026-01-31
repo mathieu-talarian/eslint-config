@@ -28,11 +28,11 @@
     "eslint-plugin-react-refresh": "0.4.26",
     "eslint-plugin-solid": "0.14.5",
     "eslint-plugin-sonarjs": "3.0.6",
-    "eslint-plugin-storybook": "10.2.1",
-    "eslint-plugin-turbo": "2.8.0",
+    "eslint-plugin-storybook": "10.2.3",
+    "eslint-plugin-turbo": "2.8.1",
     "eslint-plugin-unicorn": "62.0.0",
     "globals": "17.2.0",
-    "storybook": "10.2.1",
+    "storybook": "10.2.3",
     "typescript-eslint": "8.54.0"
   },
   "publishConfig": {
@@ -44,7 +44,7 @@
     "@swc/core": "1.15.11",
     "@tsconfig/node-lts": "24.0.0",
     "@types/node": "25.1.0",
-    "@typescript/native-preview": "7.0.0-dev.20260129.1",
+    "@typescript/native-preview": "7.0.0-dev.20260131.1",
     "prettier": "3.8.1"
   }
 }
