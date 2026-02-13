@@ -1,4 +1,6 @@
 import turboPlugin from "eslint-plugin-turbo";
-import { defineConfig } from "eslint/config";
+import { Config, defineConfig } from "eslint/config";
 
-export const turbo = defineConfig([turboPlugin.configs["flat/recommended"]]);
+export const turbo: Config[] = defineConfig(
+  [turboPlugin.configs?.["flat/recommended"]].filter(Boolean) as any,
+);
