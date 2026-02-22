@@ -16,11 +16,11 @@
     "release:major": "npm version major && npm publish"
   },
   "dependencies": {
-    "@eslint-react/eslint-plugin": "2.12.4",
+    "@eslint-react/eslint-plugin": "2.13.0",
     "@eslint/js": "10.0.1",
     "@next/eslint-plugin-next": "16.1.6",
     "@stylexjs/eslint-plugin": "0.17.5",
-    "eslint": "10.0.0",
+    "eslint": "10.0.1",
     "eslint-import-resolver-typescript": "4.4.4",
     "eslint-plugin-import-x": "4.16.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
@@ -28,13 +28,13 @@
     "eslint-plugin-react-hooks": "7.0.1",
     "eslint-plugin-react-refresh": "0.5.0",
     "eslint-plugin-solid": "0.14.5",
-    "eslint-plugin-sonarjs": "3.0.7",
-    "eslint-plugin-storybook": "10.2.8",
-    "eslint-plugin-turbo": "2.8.7",
+    "eslint-plugin-sonarjs": "4.0.0",
+    "eslint-plugin-storybook": "10.2.10",
+    "eslint-plugin-turbo": "2.8.10",
     "eslint-plugin-unicorn": "63.0.0",
     "globals": "17.3.0",
-    "storybook": "10.2.8",
-    "typescript-eslint": "8.55.0"
+    "storybook": "10.2.10",
+    "typescript-eslint": "8.56.0"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
@@ -45,8 +45,8 @@
     "@swc/core": "1.15.11",
     "@tsconfig/node-lts": "24.0.0",
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
-    "@types/node": "25.2.3",
-    "@typescript/native-preview": "7.0.0-dev.20260213.1",
+    "@types/node": "25.3.0",
+    "@typescript/native-preview": "7.0.0-dev.20260222.1",
     "prettier": "3.8.1"
   }
 }
