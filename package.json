@@ -16,26 +16,27 @@
     "release:major": "npm version major && npm publish"
   },
   "dependencies": {
-    "@eslint-react/eslint-plugin": "2.13.0",
+    "@eslint-react/eslint-plugin": "3.0.0",
     "@eslint/js": "10.0.1",
-    "@next/eslint-plugin-next": "16.1.6",
+    "@next/eslint-plugin-next": "16.1.7",
     "@stylexjs/eslint-plugin": "0.18.1",
     "eslint": "^10.0.3",
     "eslint-import-resolver-typescript": "4.4.4",
-    "eslint-plugin-import-x": "4.16.1",
+    "eslint-plugin-import-x": "4.16.2",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-no-barrel-files": "^1.2.2",
+    "eslint-plugin-react-compiler": "^19.1.0-rc.2",
     "eslint-plugin-react-hooks": "7.0.1",
     "eslint-plugin-react-refresh": "0.5.2",
     "eslint-plugin-solid": "0.14.5",
     "eslint-plugin-sonarjs": "4.0.2",
-    "eslint-plugin-storybook": "10.2.17",
-    "eslint-plugin-turbo": "2.8.15",
+    "eslint-plugin-storybook": "10.3.0",
+    "eslint-plugin-turbo": "2.8.17",
     "eslint-plugin-unicorn": "63.0.0",
     "eslint-plugin-vue": "^10.8.0",
     "globals": "^17.4.0",
-    "storybook": "10.2.17",
-    "typescript-eslint": "8.57.0",
+    "storybook": "10.3.0",
+    "typescript-eslint": "8.57.1",
     "vue-eslint-parser": "^10.4.0"
   },
   "publishConfig": {
@@ -47,8 +48,8 @@
     "@swc/core": "1.15.18",
     "@tsconfig/node-lts": "24.0.0",
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
-    "@types/node": "25.4.0",
-    "@typescript/native-preview": "7.0.0-dev.20260310.1",
+    "@types/node": "25.5.0",
+    "@typescript/native-preview": "7.0.0-dev.20260318.1",
     "prettier": "3.8.1"
   }
 }
