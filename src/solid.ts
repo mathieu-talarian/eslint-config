@@ -1,5 +1,6 @@
 import { defineConfig } from "eslint/config";
 import * as solidConfig from "eslint-plugin-solid";
+import pluginRouter from "@tanstack/eslint-plugin-router";
 
 export const solid = defineConfig([
   {
@@ -9,4 +10,8 @@ export const solid = defineConfig([
       solidConfig.default.configs["flat/typescript"],
     ],
   },
+]);
+
+export const tanstackRouter = defineConfig([
+  pluginRouter.configs["flat/recommended"],
 ]);
