@@ -20,6 +20,7 @@ const typeCheckedLanguageOptions = {
   ...baseLanguageOptions,
   parserOptions: {
     projectService: true,
+    extraFileExtensions: [".vue"],
   },
 };
 

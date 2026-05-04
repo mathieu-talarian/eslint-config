@@ -8,7 +8,7 @@ import { createTypeScriptImportResolver } from "eslint-import-resolver-typescrip
 export const base = defineConfig([
   globalIgnores(["dist", ".config/*"]),
   {
-    files: ["**/*.{ts,tsx}"],
+    files: ["**/*.{ts,tsx,vue}"],
     // @ts-expect-error types
     extends: [
       js.configs.recommended,
