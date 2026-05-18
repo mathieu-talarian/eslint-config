@@ -1,4 +1,4 @@
-import { defineConfig } from "eslint/config";
+import { defineConfig, Config } from "eslint/config";
 import tseslint from "typescript-eslint";
 import globals from "globals";
 
@@ -50,7 +50,7 @@ export const rules = {
       argsIgnorePattern: "^_",
     },
   ],
-};
+} satisfies Config["rules"];
 
 /**
  * Recommended TypeScript config (no type checking required).
