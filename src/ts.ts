@@ -24,7 +24,7 @@ const typeCheckedLanguageOptions = {
   },
 };
 
-export const rules = {
+export const rules: Config["rules"] = {
   "@typescript-eslint/consistent-type-imports": [
     "error",
     {
@@ -50,7 +50,7 @@ export const rules = {
       argsIgnorePattern: "^_",
     },
   ],
-} satisfies Config["rules"];
+} as const;
 
 /**
  * Recommended TypeScript config (no type checking required).
