@@ -24,7 +24,7 @@ const typeCheckedLanguageOptions = {
   },
 };
 
-export const rules: Config["rules"] = {
+export const rules: NonNullable<Config["rules"]> = {
   "@typescript-eslint/consistent-type-imports": [
     "error",
     {
