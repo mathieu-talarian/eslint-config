@@ -4,6 +4,41 @@ import importX from "eslint-plugin-import-x";
 import sonar from "eslint-plugin-sonarjs";
 import unicorn from "eslint-plugin-unicorn";
 import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
+import { getTsconfig } from "get-tsconfig";
+
+const moduleResolution = getTsconfig()
+  ?.config?.compilerOptions?.moduleResolution?.toLowerCase();
+
+const esmStyleResolution =
+  moduleResolution === "node16" ||
+  moduleResolution === "node18" ||
+  moduleResolution === "nodenext";
+
+const extensionsRule = esmStyleResolution
+  ? [
+      "error",
+      "ignorePackages",
+      {
+        js: "always",
+        mjs: "always",
+        jsx: "always",
+        ts: "never",
+        tsx: "never",
+        mts: "never",
+      },
+    ]
+  : [
+      "error",
+      "always",
+      {
+        ts: "never",
+        mjs: "never",
+        mts: "never",
+        js: "never",
+        tsx: "never",
+        jsx: "never",
+      },
+    ];
 
 export const base = defineConfig([
   globalIgnores(["dist", ".config/*"]),
@@ -41,18 +76,7 @@ export const base = defineConfig([
           "import-x/first": "error",
           "import-x/export": "error",
           "import-x/no-dynamic-require": "error",
-          "import-x/extensions": [
-            "error",
-            "always",
-            {
-              ts: "never",
-              mjs: "never",
-              mts: "never",
-              js: "never",
-              tsx: "never",
-              jsx: "never",
-            },
-          ],
+          "import-x/extensions": extensionsRule,
           "import-x/order": [
             "error",
             {
