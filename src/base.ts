@@ -6,8 +6,8 @@ import unicorn from "eslint-plugin-unicorn";
 import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 import { getTsconfig } from "get-tsconfig";
 
-const moduleResolution = getTsconfig()
-  ?.config?.compilerOptions?.moduleResolution?.toLowerCase();
+const moduleResolution =
+  getTsconfig()?.config?.compilerOptions?.moduleResolution?.toLowerCase();
 
 const esmStyleResolution =
   moduleResolution === "node16" ||
@@ -106,6 +106,7 @@ export const base = defineConfig([
           "unicorn/no-null": "off",
           "unicorn/prefer-top-level-await": "off",
           "unicorn/prevent-abbreviations": "off",
+          "max-lines-per-function": ["error", { max: 25 }],
           "max-lines": [
             "error",
             {
