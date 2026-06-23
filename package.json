@@ -14,10 +14,10 @@
     "dist"
   ],
   "scripts": {
-    "prepublish": "yarn build",
+    "prepublishOnly": "yarn build",
     "build": "swc src -d dist --strip-leading-paths && tsgo",
     "clean": "rm -rf dist",
-    "release": "npm version patch && npm publish --provenance",
+    "release": "npm version patch && git push --follow-tags",
     "release:minor": "npm version minor && npm publish",
     "release:major": "npm version major && npm publish"
   },
