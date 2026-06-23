@@ -4,6 +4,12 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathieu-talarian/eslint-config.git"
+  },
+  "homepage": "https://github.com/mathieu-talarian/eslint-config#readme",
+  "bugs": "https://github.com/mathieu-talarian/eslint-config/issues",
   "files": [
     "dist"
   ],
