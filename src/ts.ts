@@ -3,6 +3,13 @@ import tseslint from "typescript-eslint";
 import globals from "globals";
 
 /**
+ * Scope for the TS parser/languageOptions. Excludes `.vue` so the Vue config
+ * (which must own the vue-eslint-parser) isn't overridden regardless of the
+ * order in which consumers compose `vue` and the TS configs.
+ */
+const TS_FILES = ["**/*.{ts,tsx,mts,cts}"];
+
+/**
  * Base language options for TypeScript parsing.
  * Note: Consumers should set `tsconfigRootDir` in their own config if needed.
  */
@@ -59,7 +66,7 @@ export const rules: NonNullable<Config["rules"]> = {
 export const recommendedTsConfig = defineConfig([
   tseslint.configs.recommended,
   tseslint.configs.stylistic,
-  { languageOptions: baseLanguageOptions },
+  { files: TS_FILES, languageOptions: baseLanguageOptions },
 ]);
 
 /**
@@ -70,7 +77,7 @@ export const recommendedTsConfig = defineConfig([
 export const recommendedTsConfigWithTypeCheck = defineConfig([
   tseslint.configs.recommendedTypeChecked,
   tseslint.configs.stylisticTypeChecked,
-  { languageOptions: typeCheckedLanguageOptions },
+  { files: TS_FILES, languageOptions: typeCheckedLanguageOptions },
 ]);
 
 /**
@@ -80,7 +87,7 @@ export const recommendedTsConfigWithTypeCheck = defineConfig([
 export const strictTsConfig = defineConfig([
   tseslint.configs.strict,
   tseslint.configs.stylistic,
-  { languageOptions: baseLanguageOptions },
+  { files: TS_FILES, languageOptions: baseLanguageOptions },
 ]);
 
 /**
@@ -91,5 +98,5 @@ export const strictTsConfig = defineConfig([
 export const strictTsConfigTypeChecked = defineConfig([
   tseslint.configs.strictTypeChecked,
   tseslint.configs.stylisticTypeChecked,
-  { languageOptions: typeCheckedLanguageOptions },
+  { files: TS_FILES, languageOptions: typeCheckedLanguageOptions },
 ]);

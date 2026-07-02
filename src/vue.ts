@@ -1,34 +1,42 @@
+import {
+  configureVueProject,
+  defineConfigWithVueTs,
+  vueTsConfigs,
+  withVueTs,
+} from "@vue/eslint-config-typescript";
 import pluginVue from "eslint-plugin-vue";
-import vueParser from "vue-eslint-parser";
-import tseslint from "typescript-eslint";
-import globals from "globals";
-import { defineConfig } from "eslint/config";
 
-export const vue = defineConfig([
-  ...pluginVue.configs["flat/recommended"],
-  // ...pluginVue.configs['flat/vue2-recommended'], // Use this if you are using Vue.js 2.x.
-  {
-    files: ["**/*.vue"],
-    languageOptions: {
-      parser: vueParser,
-      ecmaVersion: 2020,
-      sourceType: "module",
-      globals: {
-        ...globals.browser,
-      },
-      parserOptions: {
-        parser: tseslint.parser,
-        extraFileExtensions: [".vue"],
-        projectService: true,
-      },
-    },
-    rules: {
-      // override/add rules settings here, such as:
-      // 'vue/no-unused-vars': 'error'
-    },
-  },
-]);
+// Building blocks, re-exported for consumers that need custom composition.
+export { vueTsConfigs, withVueTs };
+
+type VueTsOptionsT = Parameters<typeof configureVueProject>[0];
+type VueTsConfigsT = Parameters<typeof defineConfigWithVueTs>;
 
 /**
+ * Official Vue + TypeScript type-checked wiring (strict + stylistic).
  *
+ * Wraps @vue/eslint-config-typescript's `withVueTs`, which owns the
+ * vue-eslint-parser/typescript-eslint layering, projectService and
+ * extraFileExtensions consistency, and loosens no-unsafe-* rules only on
+ * Vue component operations (allowComponentTypeUnsafety, default true).
+ *
+ * IMPORTANT: pass ALL your configs through this helper (it must compose the
+ * final config) — do not spread its result next to sibling TS configs.
+ *
+ * @example
+ * // eslint.config.mjs
+ * export default vueTs(
+ *   { rootDir: import.meta.dirname },
+ *   base,
+ *   a11y,
+ *   { rules },
+ * );
  */
+export const vueTs = (options: VueTsOptionsT, ...configs: VueTsConfigsT) =>
+  withVueTs(
+    options ?? {},
+    pluginVue.configs["flat/recommended"],
+    vueTsConfigs.strictTypeChecked,
+    vueTsConfigs.stylisticTypeChecked,
+    ...configs,
+  );
