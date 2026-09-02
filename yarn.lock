@@ -939,7 +939,6 @@ __metadata:
     "@tsconfig/node-lts": "npm:24.0.1"
     "@types/eslint-plugin-jsx-a11y": "npm:6.10.1"
     "@types/node": "npm:26.4.0"
-    "@typescript/native-preview": "npm:7.0.0-dev.20260707.2"
     "@vue/eslint-config-typescript": "npm:^14.9.0"
     eslint: "npm:10.9.1"
     eslint-import-resolver-typescript: "npm:4.4.5"
@@ -949,7 +948,7 @@ __metadata:
     eslint-plugin-react-compiler: "npm:19.1.0-rc.2"
     eslint-plugin-react-hooks: "npm:7.1.1"
     eslint-plugin-react-refresh: "npm:0.5.5"
-    eslint-plugin-solid: "npm:0.16.1"
+    eslint-plugin-solid: "npm:0.17.0"
     eslint-plugin-sonarjs: "npm:4.2.0"
     eslint-plugin-storybook: "npm:10.5.10"
     eslint-plugin-turbo: "npm:2.10.12"
@@ -959,7 +958,7 @@ __metadata:
     globals: "npm:17.11.0"
     prettier: "npm:3.9.6"
     storybook: "npm:10.5.10"
-    typescript: "npm:7.0.2"
+    typescript: "npm:6.0.3"
     typescript-eslint: "npm:8.68.0"
     vue-eslint-parser: "npm:10.4.1"
   languageName: unknown
@@ -2136,227 +2135,6 @@ __metadata:
     "@typescript-eslint/types": "npm:8.68.0"
     eslint-visitor-keys: "npm:^5.0.0"
   checksum: 10c0/8ca526122b46dc035752ae9715ad0d8b387bca60c885d7bba39f99471af8d1ec0918dd0921dae2d3c6c865bafd509e77693b9e37d48380d3483d54c7dfcc6ffe
-  languageName: node
-  linkType: hard
-
-"@typescript/native-preview-darwin-arm64@npm:7.0.0-dev.20260707.2":
-  version: 7.0.0-dev.20260707.2
-  resolution: "@typescript/native-preview-darwin-arm64@npm:7.0.0-dev.20260707.2"
-  conditions: os=darwin & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@typescript/native-preview-darwin-x64@npm:7.0.0-dev.20260707.2":
-  version: 7.0.0-dev.20260707.2
-  resolution: "@typescript/native-preview-darwin-x64@npm:7.0.0-dev.20260707.2"
-  conditions: os=darwin & cpu=x64
-  languageName: node
-  linkType: hard
-
-"@typescript/native-preview-linux-arm64@npm:7.0.0-dev.20260707.2":
-  version: 7.0.0-dev.20260707.2
-  resolution: "@typescript/native-preview-linux-arm64@npm:7.0.0-dev.20260707.2"
-  conditions: os=linux & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@typescript/native-preview-linux-arm@npm:7.0.0-dev.20260707.2":
-  version: 7.0.0-dev.20260707.2
-  resolution: "@typescript/native-preview-linux-arm@npm:7.0.0-dev.20260707.2"
-  conditions: os=linux & cpu=arm
-  languageName: node
-  linkType: hard
-
-"@typescript/native-preview-linux-x64@npm:7.0.0-dev.20260707.2":
-  version: 7.0.0-dev.20260707.2
-  resolution: "@typescript/native-preview-linux-x64@npm:7.0.0-dev.20260707.2"
-  conditions: os=linux & cpu=x64
-  languageName: node
-  linkType: hard
-
-"@typescript/native-preview-win32-arm64@npm:7.0.0-dev.20260707.2":
-  version: 7.0.0-dev.20260707.2
-  resolution: "@typescript/native-preview-win32-arm64@npm:7.0.0-dev.20260707.2"
-  conditions: os=win32 & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@typescript/native-preview-win32-x64@npm:7.0.0-dev.20260707.2":
-  version: 7.0.0-dev.20260707.2
-  resolution: "@typescript/native-preview-win32-x64@npm:7.0.0-dev.20260707.2"
-  conditions: os=win32 & cpu=x64
-  languageName: node
-  linkType: hard
-
-"@typescript/native-preview@npm:7.0.0-dev.20260707.2":
-  version: 7.0.0-dev.20260707.2
-  resolution: "@typescript/native-preview@npm:7.0.0-dev.20260707.2"
-  dependencies:
-    "@typescript/native-preview-darwin-arm64": "npm:7.0.0-dev.20260707.2"
-    "@typescript/native-preview-darwin-x64": "npm:7.0.0-dev.20260707.2"
-    "@typescript/native-preview-linux-arm": "npm:7.0.0-dev.20260707.2"
-    "@typescript/native-preview-linux-arm64": "npm:7.0.0-dev.20260707.2"
-    "@typescript/native-preview-linux-x64": "npm:7.0.0-dev.20260707.2"
-    "@typescript/native-preview-win32-arm64": "npm:7.0.0-dev.20260707.2"
-    "@typescript/native-preview-win32-x64": "npm:7.0.0-dev.20260707.2"
-  dependenciesMeta:
-    "@typescript/native-preview-darwin-arm64":
-      optional: true
-    "@typescript/native-preview-darwin-x64":
-      optional: true
-    "@typescript/native-preview-linux-arm":
-      optional: true
-    "@typescript/native-preview-linux-arm64":
-      optional: true
-    "@typescript/native-preview-linux-x64":
-      optional: true
-    "@typescript/native-preview-win32-arm64":
-      optional: true
-    "@typescript/native-preview-win32-x64":
-      optional: true
-  bin:
-    tsgo: bin/tsgo
-  checksum: 10c0/42c527da5c4d61884e50591dba0a37e6d98f992e355037213f2039d606dd9fddfbacee308d40b4f3b4cfa06f79b07b7e86b45b92a83a9e60741f65e07a031982
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-aix-ppc64@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-aix-ppc64@npm:7.0.2"
-  conditions: os=aix & cpu=ppc64
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-darwin-arm64@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-darwin-arm64@npm:7.0.2"
-  conditions: os=darwin & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-darwin-x64@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-darwin-x64@npm:7.0.2"
-  conditions: os=darwin & cpu=x64
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-freebsd-arm64@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-freebsd-arm64@npm:7.0.2"
-  conditions: os=freebsd & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-freebsd-x64@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-freebsd-x64@npm:7.0.2"
-  conditions: os=freebsd & cpu=x64
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-linux-arm64@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-linux-arm64@npm:7.0.2"
-  conditions: os=linux & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-linux-arm@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-linux-arm@npm:7.0.2"
-  conditions: os=linux & cpu=arm
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-linux-loong64@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-linux-loong64@npm:7.0.2"
-  conditions: os=linux & cpu=loong64
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-linux-mips64el@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-linux-mips64el@npm:7.0.2"
-  conditions: os=linux & cpu=mips64el
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-linux-ppc64@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-linux-ppc64@npm:7.0.2"
-  conditions: os=linux & cpu=ppc64
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-linux-riscv64@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-linux-riscv64@npm:7.0.2"
-  conditions: os=linux & cpu=riscv64
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-linux-s390x@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-linux-s390x@npm:7.0.2"
-  conditions: os=linux & cpu=s390x
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-linux-x64@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-linux-x64@npm:7.0.2"
-  conditions: os=linux & cpu=x64
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-netbsd-arm64@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-netbsd-arm64@npm:7.0.2"
-  conditions: os=netbsd & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-netbsd-x64@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-netbsd-x64@npm:7.0.2"
-  conditions: os=netbsd & cpu=x64
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-openbsd-arm64@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-openbsd-arm64@npm:7.0.2"
-  conditions: os=openbsd & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-openbsd-x64@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-openbsd-x64@npm:7.0.2"
-  conditions: os=openbsd & cpu=x64
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-sunos-x64@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-sunos-x64@npm:7.0.2"
-  conditions: os=sunos & cpu=x64
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-win32-arm64@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-win32-arm64@npm:7.0.2"
-  conditions: os=win32 & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@typescript/typescript-win32-x64@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@typescript/typescript-win32-x64@npm:7.0.2"
-  conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
@@ -4001,9 +3779,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-solid@npm:0.16.1":
-  version: 0.16.1
-  resolution: "eslint-plugin-solid@npm:0.16.1"
+"eslint-plugin-solid@npm:0.17.0":
+  version: 0.17.0
+  resolution: "eslint-plugin-solid@npm:0.17.0"
   dependencies:
     "@typescript-eslint/utils": "npm:^8.0.0"
     estraverse: "npm:^5.3.0"
@@ -4014,7 +3792,7 @@ __metadata:
   peerDependencies:
     eslint: ^9.0.0 || ^10.0.0
     typescript: ">=4.8.4"
-  checksum: 10c0/f532c849aa65c1b18e4b7b174244fa29aa4236a6041a4614f042266493163829851889ca2711603200b88442c615c9ef5f2d326d45c02448338bde8d763bc073
+  checksum: 10c0/018cbbabce6cb49c37c8062d1a44a89213f80ec5a1a1603cb5a26701a5d0d23703d70d8b4015e169514b88c3d1c7f3412dff34cee0817f1e381c0291ef0857ca
   languageName: node
   linkType: hard
 
@@ -6971,78 +6749,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:7.0.2":
-  version: 7.0.2
-  resolution: "typescript@npm:7.0.2"
-  dependencies:
-    "@typescript/typescript-aix-ppc64": "npm:7.0.2"
-    "@typescript/typescript-darwin-arm64": "npm:7.0.2"
-    "@typescript/typescript-darwin-x64": "npm:7.0.2"
-    "@typescript/typescript-freebsd-arm64": "npm:7.0.2"
-    "@typescript/typescript-freebsd-x64": "npm:7.0.2"
-    "@typescript/typescript-linux-arm": "npm:7.0.2"
-    "@typescript/typescript-linux-arm64": "npm:7.0.2"
-    "@typescript/typescript-linux-loong64": "npm:7.0.2"
-    "@typescript/typescript-linux-mips64el": "npm:7.0.2"
-    "@typescript/typescript-linux-ppc64": "npm:7.0.2"
-    "@typescript/typescript-linux-riscv64": "npm:7.0.2"
-    "@typescript/typescript-linux-s390x": "npm:7.0.2"
-    "@typescript/typescript-linux-x64": "npm:7.0.2"
-    "@typescript/typescript-netbsd-arm64": "npm:7.0.2"
-    "@typescript/typescript-netbsd-x64": "npm:7.0.2"
-    "@typescript/typescript-openbsd-arm64": "npm:7.0.2"
-    "@typescript/typescript-openbsd-x64": "npm:7.0.2"
-    "@typescript/typescript-sunos-x64": "npm:7.0.2"
-    "@typescript/typescript-win32-arm64": "npm:7.0.2"
-    "@typescript/typescript-win32-x64": "npm:7.0.2"
-  dependenciesMeta:
-    "@typescript/typescript-aix-ppc64":
-      optional: true
-    "@typescript/typescript-darwin-arm64":
-      optional: true
-    "@typescript/typescript-darwin-x64":
-      optional: true
-    "@typescript/typescript-freebsd-arm64":
-      optional: true
-    "@typescript/typescript-freebsd-x64":
-      optional: true
-    "@typescript/typescript-linux-arm":
-      optional: true
-    "@typescript/typescript-linux-arm64":
-      optional: true
-    "@typescript/typescript-linux-loong64":
-      optional: true
-    "@typescript/typescript-linux-mips64el":
-      optional: true
-    "@typescript/typescript-linux-ppc64":
-      optional: true
-    "@typescript/typescript-linux-riscv64":
-      optional: true
-    "@typescript/typescript-linux-s390x":
-      optional: true
-    "@typescript/typescript-linux-x64":
-      optional: true
-    "@typescript/typescript-netbsd-arm64":
-      optional: true
-    "@typescript/typescript-netbsd-x64":
-      optional: true
-    "@typescript/typescript-openbsd-arm64":
-      optional: true
-    "@typescript/typescript-openbsd-x64":
-      optional: true
-    "@typescript/typescript-sunos-x64":
-      optional: true
-    "@typescript/typescript-win32-arm64":
-      optional: true
-    "@typescript/typescript-win32-x64":
-      optional: true
-  bin:
-    tsc: bin/tsc
-  checksum: 10c0/3dcee51ec8c332492325bcdbf7df48b66668751f127e622ae7d41b6c716eb19184424a45e14f7750f50f340232388b69e6287859155f06a5ce2df76f12cb31cf
-  languageName: node
-  linkType: hard
-
-"typescript@npm:>=5 <6.1.0":
+"typescript@npm:6.0.3, typescript@npm:>=5 <6.1.0":
   version: 6.0.3
   resolution: "typescript@npm:6.0.3"
   bin:
@@ -7052,78 +6759,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A7.0.2#optional!builtin<compat/typescript>":
-  version: 7.0.2
-  resolution: "typescript@patch:typescript@npm%3A7.0.2#optional!builtin<compat/typescript>::version=7.0.2&hash=3bafbf"
-  dependencies:
-    "@typescript/typescript-aix-ppc64": "npm:7.0.2"
-    "@typescript/typescript-darwin-arm64": "npm:7.0.2"
-    "@typescript/typescript-darwin-x64": "npm:7.0.2"
-    "@typescript/typescript-freebsd-arm64": "npm:7.0.2"
-    "@typescript/typescript-freebsd-x64": "npm:7.0.2"
-    "@typescript/typescript-linux-arm": "npm:7.0.2"
-    "@typescript/typescript-linux-arm64": "npm:7.0.2"
-    "@typescript/typescript-linux-loong64": "npm:7.0.2"
-    "@typescript/typescript-linux-mips64el": "npm:7.0.2"
-    "@typescript/typescript-linux-ppc64": "npm:7.0.2"
-    "@typescript/typescript-linux-riscv64": "npm:7.0.2"
-    "@typescript/typescript-linux-s390x": "npm:7.0.2"
-    "@typescript/typescript-linux-x64": "npm:7.0.2"
-    "@typescript/typescript-netbsd-arm64": "npm:7.0.2"
-    "@typescript/typescript-netbsd-x64": "npm:7.0.2"
-    "@typescript/typescript-openbsd-arm64": "npm:7.0.2"
-    "@typescript/typescript-openbsd-x64": "npm:7.0.2"
-    "@typescript/typescript-sunos-x64": "npm:7.0.2"
-    "@typescript/typescript-win32-arm64": "npm:7.0.2"
-    "@typescript/typescript-win32-x64": "npm:7.0.2"
-  dependenciesMeta:
-    "@typescript/typescript-aix-ppc64":
-      optional: true
-    "@typescript/typescript-darwin-arm64":
-      optional: true
-    "@typescript/typescript-darwin-x64":
-      optional: true
-    "@typescript/typescript-freebsd-arm64":
-      optional: true
-    "@typescript/typescript-freebsd-x64":
-      optional: true
-    "@typescript/typescript-linux-arm":
-      optional: true
-    "@typescript/typescript-linux-arm64":
-      optional: true
-    "@typescript/typescript-linux-loong64":
-      optional: true
-    "@typescript/typescript-linux-mips64el":
-      optional: true
-    "@typescript/typescript-linux-ppc64":
-      optional: true
-    "@typescript/typescript-linux-riscv64":
-      optional: true
-    "@typescript/typescript-linux-s390x":
-      optional: true
-    "@typescript/typescript-linux-x64":
-      optional: true
-    "@typescript/typescript-netbsd-arm64":
-      optional: true
-    "@typescript/typescript-netbsd-x64":
-      optional: true
-    "@typescript/typescript-openbsd-arm64":
-      optional: true
-    "@typescript/typescript-openbsd-x64":
-      optional: true
-    "@typescript/typescript-sunos-x64":
-      optional: true
-    "@typescript/typescript-win32-arm64":
-      optional: true
-    "@typescript/typescript-win32-x64":
-      optional: true
-  bin:
-    tsc: bin/tsc
-  checksum: 10c0/6b3cdc369cd829d46e00734ea64233ee84419c2825ad8fe408915adde77abced4b7a2401f7eed517d54a7a4f5d1c1869753cb99018df1c2159c761d9f33483a6
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@npm%3A>=5 <6.1.0#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A>=5 <6.1.0#optional!builtin<compat/typescript>":
   version: 6.0.3
   resolution: "typescript@patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=5786d5"
   bin:
