@@ -106,7 +106,7 @@ export const base = defineConfig([
           "unicorn/no-null": "off",
           "unicorn/prefer-top-level-await": "off",
           "unicorn/prevent-abbreviations": "off",
-          "max-lines-per-function": ["error", { max: 25 }],
+          "max-lines-per-function": ["error", { max: 50 }],
           "max-lines": [
             "error",
             {
