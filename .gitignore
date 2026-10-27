@@ -13,3 +13,4 @@ node_modules
 dist
 # serena local state
 .serena
+.DS_Store
