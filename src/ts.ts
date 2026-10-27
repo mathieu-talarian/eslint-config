@@ -25,8 +25,12 @@ const typeCheckedLanguageOptions = {
   },
 };
 
-/** House rules layered on top of every typescript-eslint preset below. */
-const rules: NonNullable<Config["rules"]> = {
+/**
+ * House rules layered on top of every typescript-eslint preset below.
+ * Exported for consumers that compose their own typescript-eslint config:
+ * `{ files: ["**\/*.ts"], extends: [tseslint.configs.recommended], rules: tsRules }`.
+ */
+export const tsRules: NonNullable<Config["rules"]> = {
   "@typescript-eslint/consistent-type-imports": [
     "error",
     {
@@ -54,6 +58,9 @@ const rules: NonNullable<Config["rules"]> = {
   ],
 };
 
+/** @deprecated Use `tsRules`; this alias will be removed in the next major. */
+export const rules: NonNullable<Config["rules"]> = tsRules;
+
 /**
  * Scope a set of typescript-eslint configs to `TS_FILES` so their parser and
  * rules never leak onto JavaScript or Vue files, whatever the composition order.
@@ -67,7 +74,7 @@ const tsPreset = (
       files: TS_FILES,
       extends: presets,
       languageOptions,
-      rules,
+      rules: tsRules,
     },
   ]);
 
