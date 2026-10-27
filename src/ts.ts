@@ -2,12 +2,7 @@ import { defineConfig, Config } from "eslint/config";
 import tseslint from "typescript-eslint";
 import globals from "globals";
 
-/**
- * Scope for the TS parser/languageOptions. Excludes `.vue` so the Vue config
- * (which must own the vue-eslint-parser) isn't overridden regardless of the
- * order in which consumers compose `vue` and the TS configs.
- */
-const TS_FILES = ["**/*.{ts,tsx,mts,cts}"];
+import { TS_FILES } from "./files.js";
 
 /**
  * Base language options for TypeScript parsing.
@@ -15,7 +10,6 @@ const TS_FILES = ["**/*.{ts,tsx,mts,cts}"];
  */
 const baseLanguageOptions = {
   parser: tseslint.parser,
-  ecmaVersion: 2020,
   globals: globals.browser,
 };
 
@@ -31,7 +25,8 @@ const typeCheckedLanguageOptions = {
   },
 };
 
-export const rules: NonNullable<Config["rules"]> = {
+/** House rules layered on top of every typescript-eslint preset below. */
+const rules: NonNullable<Config["rules"]> = {
   "@typescript-eslint/consistent-type-imports": [
     "error",
     {
@@ -57,46 +52,62 @@ export const rules: NonNullable<Config["rules"]> = {
       argsIgnorePattern: "^_",
     },
   ],
-} as const;
+};
+
+/**
+ * Scope a set of typescript-eslint configs to `TS_FILES` so their parser and
+ * rules never leak onto JavaScript or Vue files, whatever the composition order.
+ */
+const tsPreset = (
+  presets: Config[][],
+  languageOptions: Config["languageOptions"],
+): Config[] =>
+  defineConfig([
+    {
+      files: TS_FILES,
+      extends: presets,
+      languageOptions,
+      rules,
+    },
+  ]);
 
 /**
  * Recommended TypeScript config (no type checking required).
  * Good starting point for most projects.
  */
-export const recommendedTsConfig = defineConfig([
-  tseslint.configs.recommended,
-  tseslint.configs.stylistic,
-  { files: TS_FILES, languageOptions: baseLanguageOptions },
-]);
+export const recommendedTsConfig: Config[] = tsPreset(
+  [tseslint.configs.recommended, tseslint.configs.stylistic],
+  baseLanguageOptions,
+);
 
 /**
  * Recommended TypeScript config WITH type-checked rules.
  * Catches more bugs using TypeScript's type information.
  * Requires: projectService or project in parserOptions.
  */
-export const recommendedTsConfigWithTypeCheck = defineConfig([
-  tseslint.configs.recommendedTypeChecked,
-  tseslint.configs.stylisticTypeChecked,
-  { files: TS_FILES, languageOptions: typeCheckedLanguageOptions },
-]);
+export const recommendedTsConfigWithTypeCheck: Config[] = tsPreset(
+  [
+    tseslint.configs.recommendedTypeChecked,
+    tseslint.configs.stylisticTypeChecked,
+  ],
+  typeCheckedLanguageOptions,
+);
 
 /**
  * Strict TypeScript config (no type checking required).
  * More opinionated rules for experienced TypeScript developers.
  */
-export const strictTsConfig = defineConfig([
-  tseslint.configs.strict,
-  tseslint.configs.stylistic,
-  { files: TS_FILES, languageOptions: baseLanguageOptions },
-]);
+export const strictTsConfig: Config[] = tsPreset(
+  [tseslint.configs.strict, tseslint.configs.stylistic],
+  baseLanguageOptions,
+);
 
 /**
  * Strict TypeScript config WITH type-checked rules.
  * Most comprehensive type-aware linting.
  * Requires: projectService or project in parserOptions.
  */
-export const strictTsConfigTypeChecked = defineConfig([
-  tseslint.configs.strictTypeChecked,
-  tseslint.configs.stylisticTypeChecked,
-  { files: TS_FILES, languageOptions: typeCheckedLanguageOptions },
-]);
+export const strictTsConfigTypeChecked: Config[] = tsPreset(
+  [tseslint.configs.strictTypeChecked, tseslint.configs.stylisticTypeChecked],
+  typeCheckedLanguageOptions,
+);

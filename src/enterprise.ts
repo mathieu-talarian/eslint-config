@@ -2,6 +2,8 @@ import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
 import globals from "globals";
 
+import { TS_FILES } from "./files.js";
+
 /**
  * Enterprise-grade TypeScript ESLint configuration.
  *
@@ -12,18 +14,22 @@ import globals from "globals";
  * - Explicit typing requirements
  * - Security-focused rules
  *
- * Requires: TypeScript project with tsconfig.json
+ * Scoped to TypeScript files only, so JavaScript and Vue files keep their
+ * own parsers. Requires: TypeScript project with tsconfig.json.
  */
 export const enterprise = defineConfig([
-  tseslint.configs.strictTypeChecked,
-  tseslint.configs.stylisticTypeChecked,
   {
+    files: TS_FILES,
+    extends: [
+      tseslint.configs.strictTypeChecked,
+      tseslint.configs.stylisticTypeChecked,
+    ],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
         projectService: true,
+        extraFileExtensions: [".vue"],
       },
-      ecmaVersion: 2022,
       globals: globals.browser,
     },
     rules: {
@@ -287,6 +293,7 @@ export const enterprise = defineConfig([
 export const enterpriseRelaxed = defineConfig([
   ...enterprise,
   {
+    files: TS_FILES,
     rules: {
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-unsafe-argument": "warn",

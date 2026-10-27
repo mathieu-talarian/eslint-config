@@ -1,11 +1,11 @@
 import { defineConfig } from "eslint/config";
-import stylexPlufin from "@stylexjs/eslint-plugin";
+import stylexPlugin from "@stylexjs/eslint-plugin";
 
 export const stylex = defineConfig([
   {
     plugins: {
-      // @ts-ignore
-      "@stylexjs": stylexPlufin,
+      // @ts-expect-error upstream `valid-shorthands` declares `meta.type: "error"`, which is not a valid ESLint RuleType
+      "@stylexjs": stylexPlugin,
     },
     rules: {
       "@stylexjs/valid-styles": "error",

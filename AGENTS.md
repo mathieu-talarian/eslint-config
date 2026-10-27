@@ -6,6 +6,11 @@
   TypeScript sources use ESM; `src/index.ts` is the public re-export surface.
 - `src/base.ts` defines the base configuration, `src/ts.ts` defines TypeScript
   variants, and the other `src/*.ts` files define framework or focused presets.
+  `src/files.ts` holds the shared file globs and is intentionally not exported.
+- `eslint` and `typescript` are peer dependencies; consumers install them.
+  typescript-eslint supports TypeScript `>=5.6.3 <6.1.0` only: the TypeScript 7
+  npm package ships the native compiler without the JavaScript API, so linting
+  under TypeScript 7 is not possible until typescript-eslint adds support.
 - `package.json` is the source of truth for versions and scripts. Use its pinned
   Node version (Volta) and Yarn version (`packageManager`); `.yarnrc.yml` points
   to the committed Yarn release. Preserve exact dependency pins.
@@ -120,17 +125,19 @@ cross-module impact, Serena for symbols, and Context7 for external APIs.
 
 Run the narrowest relevant checks first, then broaden according to risk:
 
-| Change                                  | Validation                                                                                                                                                                                 |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Dependency installation or lockfile     | `yarn install --immutable` validates the committed lockfile without regenerating it.                                                                                                       |
-| Source, presets, or build configuration | Run relevant targeted checks, then `yarn build` for JavaScript and declaration generation.                                                                                                 |
-| Preset behavior                         | Exercise the affected preset with representative consumer files/configuration when practical; compilation alone does not validate rule behavior.                                           |
-| Documentation only                      | Verify facts and referenced paths, run `yarn exec prettier --check AGENTS.md` when editing this file, and inspect `git diff --check` and the final diff. No application build is required. |
+| Change                                  | Validation                                                                                                                                                                                                                                                                                              |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Dependency installation or lockfile     | `yarn install --immutable` validates the committed lockfile without regenerating it.                                                                                                                                                                                                                    |
+| Source, presets, or build configuration | Run relevant targeted checks, then `yarn build` for JavaScript and declaration generation.                                                                                                                                                                                                              |
+| Preset behavior                         | Run `yarn test:smoke` (packs the tree, installs it with npm in a temporary directory and lints fixtures with every preset; needs network access). Exercise the affected preset with representative consumer files when the fixtures do not cover it; compilation alone does not validate rule behavior. |
+| Documentation only                      | Verify facts and referenced paths, run `yarn exec prettier --check AGENTS.md` when editing this file, and inspect `git diff --check` and the final diff. No application build is required.                                                                                                              |
 
-There is currently no justfile, test script, or lint script. Do not assume
-`just check`, `yarn test`, or `yarn lint` exists; recheck `package.json` and repository
-files if tooling changes. Report the checks actually run and any validation gaps.
+`yarn test:smoke` is the only test script; there is no justfile, unit test, or
+lint script. Do not assume `just check`, `yarn test`, or `yarn lint` exists;
+recheck `package.json` and repository files if tooling changes. Report the checks actually run and any validation gaps.
 
+`.github/workflows/ci.yml` runs the immutable install, `yarn build` and
+`yarn test:smoke` on pull requests and pushes to `main`.
 `.github/workflows/publish.yml` publishes to GitHub Packages on `v*` tags after
 an immutable Yarn install. Publishing invokes `prepublishOnly`, which builds the
 package. Release scripts change versions, push tags, or publish packages; use them

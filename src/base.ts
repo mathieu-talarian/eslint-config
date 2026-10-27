@@ -1,3 +1,5 @@
+import type { Linter } from "eslint";
+
 import js from "@eslint/js";
 import { Config, defineConfig, globalIgnores } from "eslint/config";
 import importX from "eslint-plugin-import-x";
@@ -5,6 +7,8 @@ import sonar from "eslint-plugin-sonarjs";
 import unicorn from "eslint-plugin-unicorn";
 import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 import { getTsconfig } from "get-tsconfig";
+
+import { SOURCE_FILES } from "./files.js";
 
 const moduleResolution =
   getTsconfig()?.config?.compilerOptions?.moduleResolution?.toLowerCase();
@@ -14,7 +18,7 @@ const esmStyleResolution =
   moduleResolution === "node18" ||
   moduleResolution === "nodenext";
 
-const extensionsRule = esmStyleResolution
+const extensionsRule: Linter.RuleEntry = esmStyleResolution
   ? [
       "error",
       "ignorePackages",
@@ -43,8 +47,7 @@ const extensionsRule = esmStyleResolution
 export const base = defineConfig([
   globalIgnores(["dist", ".config/*"]),
   {
-    files: ["**/*.{ts,tsx,vue}"],
-    // @ts-expect-error types
+    files: SOURCE_FILES,
     extends: [
       js.configs.recommended,
       unicorn.configs.recommended,
@@ -117,6 +120,6 @@ export const base = defineConfig([
           ],
         },
       },
-    ].filter(Boolean),
+    ],
   },
 ]);

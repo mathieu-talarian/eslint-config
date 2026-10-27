@@ -17,9 +17,10 @@
     "build": "swc src -d dist --strip-leading-paths && tsc",
     "clean": "rm -rf dist",
     "prepublishOnly": "yarn build",
+    "test:smoke": "node scripts/smoke-test.mjs",
     "release": "npm version patch && git push --follow-tags",
-    "release:major": "npm version major && npm publish",
-    "release:minor": "npm version minor && npm publish"
+    "release:minor": "npm version minor && git push --follow-tags",
+    "release:major": "npm version major && git push --follow-tags"
   },
   "dependencies": {
     "@eslint-react/eslint-plugin": "5.28.8",
@@ -28,12 +29,10 @@
     "@stylexjs/eslint-plugin": "0.19.1",
     "@tanstack/eslint-plugin-router": "1.162.0",
     "@vue/eslint-config-typescript": "14.9.0",
-    "eslint": "10.13.0",
     "eslint-import-resolver-typescript": "4.4.5",
     "eslint-plugin-import-x": "4.17.1",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-no-barrel-files": "2.3.0",
-    "eslint-plugin-react-compiler": "19.1.0-rc.2",
     "eslint-plugin-react-hooks": "7.1.1",
     "eslint-plugin-react-refresh": "0.5.7",
     "eslint-plugin-solid": "0.18.1",
@@ -54,8 +53,19 @@
     "@tsconfig/node-lts": "24.0.1",
     "@types/eslint-plugin-jsx-a11y": "6.10.1",
     "@types/node": "26.6.5",
+    "eslint": "10.13.0",
     "prettier": "3.9.10",
-    "typescript": "7.0.2"
+    "typescript": "6.0.3"
+  },
+  "peerDependencies": {
+    "eslint": "^10.4.0",
+    "turbo": ">2.0.0",
+    "typescript": ">=5.6.3 <6.1.0"
+  },
+  "peerDependenciesMeta": {
+    "turbo": {
+      "optional": true
+    }
   },
   "packageManager": "yarn@4.18.1",
   "volta": {

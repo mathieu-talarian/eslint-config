@@ -1,10 +1,6 @@
 {
   "$schema": "https://swc.rs/schema.json",
   "jsc": {
-    "minify": {
-      "compress": true,
-      "mangle": true
-    },
     "parser": {
       "syntax": "typescript"
     },
@@ -12,6 +8,5 @@
   },
   "module": {
     "type": "es6"
-  },
-  "minify": true
+  }
 }
