@@ -13,6 +13,12 @@
   `tsconfig.json` control these outputs. `dist/` is generated and ignored by Git;
   edit `src/`, not build artifacts.
 
+## Load canary and user address
+
+- If this file is loaded at session start, begin your first response with exactly:
+  `AGENTS.md loaded — hello Mr. Twinkle.`
+- Address the user as `Mr. Twinkle` in the first sentence of every substantive response.
+
 ## Required tool contract
 
 **Graphify, Serena, Sequential Thinking, and Context7 are required.** This file describes

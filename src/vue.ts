@@ -32,7 +32,10 @@ type VueTsConfigsT = Parameters<typeof defineConfigWithVueTs>;
  *   { rules },
  * );
  */
-export const vueTs = (options: VueTsOptionsT, ...configs: VueTsConfigsT): ReturnType<typeof withVueTs> =>
+export const vueTs = (
+  options: VueTsOptionsT,
+  ...configs: VueTsConfigsT
+): ReturnType<typeof withVueTs> =>
   withVueTs(
     options ?? {},
     pluginVue.configs["flat/recommended"],

@@ -18,7 +18,7 @@ jobs:
           node-version: 26
           registry-url: https://npm.pkg.github.com
           scope: "@mathieu-talarian"
-          cache: 'yarn'
+          cache: "yarn"
       - run: yarn install --immutable
       - run: npm publish --provenance --access public
         env:
