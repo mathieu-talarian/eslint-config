@@ -96,7 +96,9 @@ console.log(`work dir: ${work}`);
 const packed = JSON.parse(
   exec("npm", ["pack", "--pack-destination", work, "--json"], root).stdout,
 );
-const tarball = join(work, packed[0].filename);
+// npm < 12 prints an array; npm >= 12 prints an object keyed by package name.
+const [packInfo] = Array.isArray(packed) ? packed : Object.values(packed);
+const tarball = join(work, packInfo.filename);
 
 writeFileSync(
   join(work, "package.json"),
